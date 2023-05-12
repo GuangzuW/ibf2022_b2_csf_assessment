@@ -1,0 +1,33 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="upload()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <input type="text" formControlName="name">
+            </tr>
+            <br>
+            <tr>
+                <td>Title:</td>
+                <input type="text" formControlName="title" >
+            </tr>
+            <br>
+            <tr>
+                <td>Comments:</td>
+                <textarea formControlName="comments"></textarea>
+            </tr>
+            <br>
+            <tr>
+                <td>Archive</td>
+                <input type="file"  accept=".zip" formControlName="archive">
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button type="submit" mat-raised-button color="primary" [disabled]="formValid()">Submit</button>
+                    <button type="button" mat-raised-button color="primary" [routerLink]="['/']">Cancel</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+  </div>
